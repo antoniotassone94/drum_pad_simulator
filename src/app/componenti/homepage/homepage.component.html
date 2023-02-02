@@ -3,39 +3,42 @@
   <div id="table">
     <div id="buttons">
       <div class="rowButtons">
-        <div class="columnButtons" [ngClass]="dati[0].type"><button [id]="dati[0].name" (click)="esegui(0)"></button></div>
-        <div class="columnButtons" [ngClass]="dati[1].type"><button [id]="dati[1].name" (click)="esegui(1)"></button></div>
-        <div class="columnButtons" [ngClass]="dati[2].type"><button [id]="dati[2].name" (click)="esegui(2)"></button></div>
-        <div class="columnButtons" [ngClass]="dati[3].type"><button [id]="dati[3].name" (click)="esegui(3)"></button></div>
+        <div class="columnButtons" [ngClass]="dati[0].type"><button [id]="dati[0].name" (click)="playButtonKeyboard(0)"></button></div>
+        <div class="columnButtons" [ngClass]="dati[1].type"><button [id]="dati[1].name" (click)="playButtonKeyboard(1)"></button></div>
+        <div class="columnButtons" [ngClass]="dati[2].type"><button [id]="dati[2].name" (click)="playButtonKeyboard(2)"></button></div>
+        <div class="columnButtons" [ngClass]="dati[3].type"><button [id]="dati[3].name" (click)="playButtonKeyboard(3)"></button></div>
       </div>
       <div class="rowButtons">
-        <div class="columnButtons" [ngClass]="dati[4].type"><button [id]="dati[4].name" (click)="esegui(4)"></button></div>
-        <div class="columnButtons" [ngClass]="dati[5].type"><button [id]="dati[5].name" (click)="esegui(5)"></button></div>
-        <div class="columnButtons" [ngClass]="dati[6].type"><button [id]="dati[6].name" (click)="esegui(6)"></button></div>
-        <div class="columnButtons" [ngClass]="dati[7].type"><button [id]="dati[7].name" (click)="esegui(7)"></button></div>
+        <div class="columnButtons" [ngClass]="dati[4].type"><button [id]="dati[4].name" (click)="playButtonKeyboard(4)"></button></div>
+        <div class="columnButtons" [ngClass]="dati[5].type"><button [id]="dati[5].name" (click)="playButtonKeyboard(5)"></button></div>
+        <div class="columnButtons" [ngClass]="dati[6].type"><button [id]="dati[6].name" (click)="playButtonKeyboard(6)"></button></div>
+        <div class="columnButtons" [ngClass]="dati[7].type"><button [id]="dati[7].name" (click)="playButtonKeyboard(7)"></button></div>
       </div>
       <div class="rowButtons">
-        <div class="columnButtons" [ngClass]="dati[8].type"><button [id]="dati[8].name" (click)="esegui(8)"></button></div>
-        <div class="columnButtons" [ngClass]="dati[9].type"><button [id]="dati[9].name" (click)="esegui(9)"></button></div>
-        <div class="columnButtons" [ngClass]="dati[10].type"><button [id]="dati[10].name" (click)="esegui(10)"></button></div>
-        <div class="columnButtons" [ngClass]="dati[11].type"><button [id]="dati[11].name" (click)="esegui(11)"></button></div>
+        <div class="columnButtons" [ngClass]="dati[8].type"><button [id]="dati[8].name" (click)="playButtonKeyboard(8)"></button></div>
+        <div class="columnButtons" [ngClass]="dati[9].type"><button [id]="dati[9].name" (click)="playButtonKeyboard(9)"></button></div>
+        <div class="columnButtons" [ngClass]="dati[10].type"><button [id]="dati[10].name" (click)="playButtonKeyboard(10)"></button></div>
+        <div class="columnButtons" [ngClass]="dati[11].type"><button [id]="dati[11].name" (click)="playButtonKeyboard(11)"></button></div>
       </div>
       <div class="rowButtons">
-        <div class="columnButtons" [ngClass]="dati[12].type"><button [id]="dati[12].name" (click)="esegui(12)"></button></div>
-        <div class="columnButtons" [ngClass]="dati[13].type"><button [id]="dati[13].name" (click)="esegui(13)"></button></div>
-        <div class="columnButtons" [ngClass]="dati[14].type"><button [id]="dati[14].name" (click)="esegui(14)"></button></div>
-        <div class="columnButtons" [ngClass]="dati[15].type"><button [id]="dati[15].name" (click)="esegui(15)"></button></div>
+        <div class="columnButtons" [ngClass]="dati[12].type"><button [id]="dati[12].name" (click)="playButtonKeyboard(12)"></button></div>
+        <div class="columnButtons" [ngClass]="dati[13].type"><button [id]="dati[13].name" (click)="playButtonKeyboard(13)"></button></div>
+        <div class="columnButtons" [ngClass]="dati[14].type"><button [id]="dati[14].name" (click)="playButtonKeyboard(14)"></button></div>
+        <div class="columnButtons" [ngClass]="dati[15].type"><button [id]="dati[15].name" (click)="playButtonKeyboard(15)"></button></div>
       </div>
     </div>
     <div id="menu">
-      <div class="rowMenu">RECORDING MENU</div>
+      <div class="rowMenu text">RECORDING MENU</div>
       <div class="rowMenu">
-        <div class="columnMenu">1</div>
-        <div class="columnMenu">2</div>
-        <div class="columnMenu">3</div>
-        <div class="columnMenu">4</div>
+        <div class="columnMenu"><button id="newRecord" class="menuButtons" (click)="newRecord()" [disabled]="newRecordVariable">rec</button></div>
+        <div class="columnMenu"><button id="stopRecord" class="menuButtons" (click)="stopRecord()" [disabled]="!newRecordVariable">stop</button></div>
+        <div class="columnMenu"><button id="playRecord" class="menuButtons" (click)="playRecord()" [disabled]="!(recordExists && !newRecordVariable)">play</button></div>
+        <div class="columnMenu"><button id="deleteRecord" class="menuButtons" (click)="deleteRecord()" [disabled]="!(recordExists && !newRecordVariable)">del</button></div>
       </div>
-      <div class="rowMenu">text</div>
+      <div class="rowMenu text">
+        <div *ngIf="recordExists;else anyRecord">There is one record</div>
+        <ng-template #anyRecord>Any record yet</ng-template>
+      </div>
     </div>
   </div>
 </div>

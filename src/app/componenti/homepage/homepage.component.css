@@ -1,16 +1,19 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto");
 
-#container,#table,#title,#buttons,.rowButtons,#menu,.rowMenu,.columnMenu,button{
+#container,#table,#title,#buttons,.rowButtons,#menu,.rowMenu,.columnMenu,button,.menuButtons{
   padding-top:0px;
   padding-left:0px;
   padding-bottom:0px;
   padding-right:0px;
-  height:100%;
   text-align:center;
   font-weight:bold;
   font-family:"Roboto",sans-serif;
   color:white;
   font-size:12pt;
+}
+
+#container,#table,#title,#buttons,.rowButtons,#menu,.rowMenu,.columnMenu,button{
+  height:100%;
 }
 
 #title{
@@ -22,6 +25,9 @@
   margin-left:0px;
   margin-bottom:0px;
   margin-right:0px;
+}
+
+#container,#table,#title,.rowButtons,.rowMenu,.columnMenu,button{
   border:0px none transparent;
 }
 
@@ -119,4 +125,39 @@
 .kick button{
   background-color:rgb(61,138,207);
   border-color:rgb(49,103,151);
+}
+
+.menuButtons{
+  width:50px;
+  height:50px;
+  background-color:rgb(90,87,87);
+  border:3px solid black;
+  border-radius:6px;
+  margin-top:5px;
+  margin-left:5px;
+  margin-bottom:5px;
+  margin-right:5px;
+}
+
+.text{
+  margin-left:10px;
+}
+
+button:disabled{
+  opacity:40%;
+}
+
+button{
+  opacity:100%;
+}
+
+@media (max-width:740px) {
+  #table{
+    display:flex;
+    flex-direction:column;
+  }
+
+  #menu{
+    margin-left:20px;
+  }
 }

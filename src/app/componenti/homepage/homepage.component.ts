@@ -10,6 +10,9 @@ declare let data:any;
 export class HomepageComponent implements OnInit {
   dati:any = [];
   nomifile:string[] = [];
+  record:number[] = [];
+  recordExists:boolean = false;
+  newRecordVariable:boolean = false;
 
   constructor(){}
 
@@ -21,10 +24,41 @@ export class HomepageComponent implements OnInit {
     }
   }
 
-  esegui(i:number){
+  playButtonKeyboard(i:number){
     const audio = new Audio();
     audio.src = this.nomifile[i];
     audio.load();
     audio.play();
+    if(this.newRecordVariable){
+      this.record.push(i);
+    }
+  }
+
+  newRecord(){
+    if(!this.newRecordVariable){
+      this.newRecordVariable = true;
+    }
+  }
+
+  stopRecord(){
+    if(this.newRecordVariable){
+      this.newRecordVariable = false;
+      this.recordExists = true;
+    }
+  }
+
+  playRecord(){
+    if(!this.newRecordVariable && this.recordExists){
+      this.record.forEach(instrumental => {
+        this.playButtonKeyboard(instrumental);
+      });
+    }
+  }
+
+  deleteRecord(){
+    if(!this.newRecordVariable && this.recordExists){
+      this.record.splice(0,this.record.length);
+      this.recordExists = false;
+    }
   }
 }
