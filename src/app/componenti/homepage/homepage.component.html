@@ -1,34 +1,34 @@
 <div id="container">
-  <div id="title">JS Drum Pad</div>
+  <div id="title">Drumpad Simulator</div>
   <div id="table">
     <div id="buttons">
       <div class="rowButtons">
-        <div class="columnButtons">1</div>
-        <div class="columnButtons">2</div>
-        <div class="columnButtons">3</div>
-        <div class="columnButtons">4</div>
+        <div class="columnButtons" [ngClass]="dati[0].type"><button [id]="dati[0].name" (click)="esegui(0)"></button></div>
+        <div class="columnButtons" [ngClass]="dati[1].type"><button [id]="dati[1].name" (click)="esegui(1)"></button></div>
+        <div class="columnButtons" [ngClass]="dati[2].type"><button [id]="dati[2].name" (click)="esegui(2)"></button></div>
+        <div class="columnButtons" [ngClass]="dati[3].type"><button [id]="dati[3].name" (click)="esegui(3)"></button></div>
       </div>
       <div class="rowButtons">
-        <div class="columnButtons">5</div>
-        <div class="columnButtons">6</div>
-        <div class="columnButtons">7</div>
-        <div class="columnButtons">8</div>
+        <div class="columnButtons" [ngClass]="dati[4].type"><button [id]="dati[4].name" (click)="esegui(4)"></button></div>
+        <div class="columnButtons" [ngClass]="dati[5].type"><button [id]="dati[5].name" (click)="esegui(5)"></button></div>
+        <div class="columnButtons" [ngClass]="dati[6].type"><button [id]="dati[6].name" (click)="esegui(6)"></button></div>
+        <div class="columnButtons" [ngClass]="dati[7].type"><button [id]="dati[7].name" (click)="esegui(7)"></button></div>
       </div>
       <div class="rowButtons">
-        <div class="columnButtons">9</div>
-        <div class="columnButtons">10</div>
-        <div class="columnButtons">11</div>
-        <div class="columnButtons">12</div>
+        <div class="columnButtons" [ngClass]="dati[8].type"><button [id]="dati[8].name" (click)="esegui(8)"></button></div>
+        <div class="columnButtons" [ngClass]="dati[9].type"><button [id]="dati[9].name" (click)="esegui(9)"></button></div>
+        <div class="columnButtons" [ngClass]="dati[10].type"><button [id]="dati[10].name" (click)="esegui(10)"></button></div>
+        <div class="columnButtons" [ngClass]="dati[11].type"><button [id]="dati[11].name" (click)="esegui(11)"></button></div>
       </div>
       <div class="rowButtons">
-        <div class="columnButtons">13</div>
-        <div class="columnButtons">14</div>
-        <div class="columnButtons">15</div>
-        <div class="columnButtons">16</div>
+        <div class="columnButtons" [ngClass]="dati[12].type"><button [id]="dati[12].name" (click)="esegui(12)"></button></div>
+        <div class="columnButtons" [ngClass]="dati[13].type"><button [id]="dati[13].name" (click)="esegui(13)"></button></div>
+        <div class="columnButtons" [ngClass]="dati[14].type"><button [id]="dati[14].name" (click)="esegui(14)"></button></div>
+        <div class="columnButtons" [ngClass]="dati[15].type"><button [id]="dati[15].name" (click)="esegui(15)"></button></div>
       </div>
     </div>
     <div id="menu">
-      <div class="rowMenu">RECORD</div>
+      <div class="rowMenu">RECORDING MENU</div>
       <div class="rowMenu">
         <div class="columnMenu">1</div>
         <div class="columnMenu">2</div>

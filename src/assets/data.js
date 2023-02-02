@@ -64,5 +64,3 @@ const data = [
     type: "crash",
   }
 ];
-
-export default data;

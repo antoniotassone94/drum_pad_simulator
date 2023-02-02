@@ -1,20 +1,57 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto");
 
-body,#container,#table,#title,#buttons,.rowButtons,.columnButtons,#menu,.rowMenu,.columnMenu{
-    margin-top:0px;
-    margin-left:0px;
-    margin-bottom:0px;
-    margin-right:0px;
-    padding-top:0px;
-    padding-left:0px;
-    padding-bottom:0px;
-    padding-right:0px;
-    border:0px none transparent;
+#container,#table,#title,#buttons,.rowButtons,#menu,.rowMenu,.columnMenu,button{
+  padding-top:0px;
+  padding-left:0px;
+  padding-bottom:0px;
+  padding-right:0px;
+  height:100%;
+  text-align:center;
+  font-weight:bold;
+  font-family:"Roboto",sans-serif;
+  color:white;
+  font-size:12pt;
+}
+
+#title{
+  font-size:26pt;
+}
+
+#container,#table,#title,.rowButtons,.rowMenu,.columnMenu,button{
+  margin-top:0px;
+  margin-left:0px;
+  margin-bottom:0px;
+  margin-right:0px;
+  border:0px none transparent;
+}
+
+#buttons,#menu{
+  margin-top:20px;
+  margin-bottom:20px;
+  border:2px solid transparent;
+  border-radius:14pt;
+}
+
+#buttons{
+  margin-left:20px;
+  margin-right:20px;
+}
+
+#menu{
+  margin-left:0px;
+  margin-right:20px;
+}
+
+#title,.rowButtons,.rowMenu,.columnMenu,button{
     width:100%;
-    height:100%;
-    text-align:center;
-    font-weight:bold;
-    font-family:"Roboto",sans-serif;
+}
+
+#container,#table{
+  width:fit-content;
+}
+
+#container{
+  background-color:rgb(48,48,92);
 }
 
 #container,#buttons,#menu{
@@ -25,4 +62,61 @@ body,#container,#table,#title,#buttons,.rowButtons,.columnButtons,#menu,.rowMenu
 #table,.rowButtons,.rowMenu{
     display:flex;
     flex-direction:row;
+}
+
+#buttons,#menu{
+  background-color:rgb(112,128,144);
+  width:fit-content;
+}
+
+.columnButtons{
+  width:100px;
+  height:100px;
+  text-align:center;
+  font-weight:bold;
+  font-family:"Roboto",sans-serif;
+  padding-left:0%;
+  padding-top:0%;
+  padding-right:0%;
+  padding-bottom:0%;
+  margin-top:5px;
+  margin-left:5px;
+  margin-bottom:5px;
+  margin-right:5px;
+}
+
+.columnButtons button{
+  border-style:solid;
+  border-width:3px;
+  border-radius:10px;
+}
+
+.clap button{
+  background-color:rgb(77,216,239);
+  border-color:rgb(60,157,173);
+}
+
+.hi-hat button{
+  background-color:rgb(246,201,79);
+  border-color:rgb(178,147,62);
+}
+
+.cowbell button{
+  background-color:rgb(218,102,4);
+  border-color:rgb(159,78,9);
+}
+
+.crash button{
+  background-color:rgb(77,205,67);
+  border-color:rgb(60,149,53);
+}
+
+.low button{
+  background-color:rgb(159,50,164);
+  border-color:rgb(117,41,121);
+}
+
+.kick button{
+  background-color:rgb(61,138,207);
+  border-color:rgb(49,103,151);
 }
