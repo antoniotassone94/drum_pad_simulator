@@ -49,8 +49,10 @@ export class HomepageComponent implements OnInit {
 
   playRecord(){
     if(!this.newRecordVariable && this.recordExists){
-      this.record.forEach(instrumental => {
-        this.playButtonKeyboard(instrumental);
+      this.record.forEach((instrumental,index) => {
+        setTimeout(() => {
+          this.playButtonKeyboard(instrumental);
+        },index*500);
       });
     }
   }
